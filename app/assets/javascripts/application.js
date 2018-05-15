@@ -10,6 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery2
+//= require jquery.turbolinks
 //= require turbolinks
+//= require jquery_ujs
+//= require materialize-sprockets
 //= require_tree .
+
+function material_select() {
+    $('select').material_select();
+}
+$(document).on('turbolinks:load', function() {
+    $('select').material_select();
+    $('.modal').modal();
+    $(".button-collapse").sideNav();
+});
